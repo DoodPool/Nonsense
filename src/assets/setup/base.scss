@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  background-color: black;
+
+  ::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    background-clip: content-box;
+    border: 3px solid transparent;
+  }
+}
+
+body {
+  min-height: 100vh;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+
+  font-family: vt323;
+  text-rendering: optimizeLegibility;
+}
