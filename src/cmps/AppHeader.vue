@@ -8,13 +8,9 @@
 
 <script>
 export default {}
-
-import { wearService } from "../services/wear.service.local";
-const wears = wearService.query()
-console.log('wears', wears);
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .app-header {
     position: fixed;
 

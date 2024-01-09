@@ -1,10 +1,12 @@
 <template>
-    <WearList v-if="wears" :wears="slicedWears(0, 4)" />
-    <img src="https://nonsense.jp/_image?href=%2F_astro%2Fsmasher_crewneck.65e37ab7.webp&f=webp" alt="">
-    <WearList v-if="wears" :wears="slicedWears(4, 8)" />
-    <img src="https://nonsense.jp/_image?href=%2F_astro%2Fcorporate_jacket.e7d12d68.webp&f=webp" alt="">
-    <WearList v-if="wears" :wears="slicedWears(8, 12)" />
-    <img src="https://nonsense.jp/_image?href=%2F_astro%2Fcyberarm_gloves.d622d17a.webp&f=webp" alt="">
+    <section>
+        <WearList v-if="wears" :wears="slicedWears(0, 4)" />
+        <img class="full" src="https://nonsense.jp/_image?href=%2F_astro%2Fsmasher_crewneck.65e37ab7.webp&f=webp" alt="">
+        <WearList v-if="wears" :wears="slicedWears(4, 8)" />
+        <img src="https://nonsense.jp/_image?href=%2F_astro%2Fcorporate_jacket.e7d12d68.webp&f=webp" alt="">
+        <WearList v-if="wears" :wears="slicedWears(8, 12)" />
+        <img src="https://nonsense.jp/_image?href=%2F_astro%2Fcyberarm_gloves.d622d17a.webp&f=webp" alt="">
+    </section>
 </template>
 
 <script>
@@ -42,6 +44,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+section>*:not(.full) {
+    padding-inline: 64px;
+}
+
 h1 {
     color: white;
 }
