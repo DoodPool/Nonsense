@@ -3,6 +3,11 @@
   margin: 0;
 }
 
+::selection {
+  background-color: #ff3a3ae0;
+}
+
+
 html {
   background-color: black;
 
@@ -19,11 +24,9 @@ html {
 }
 
 body {
-  min-height: 100vh;
-  transition:
-    color 0.5s,
-    background-color 0.5s;
+  // min-height: 100vh;
+  // transition: color 0.5s, background-color 0.5s;
+  // text-rendering: optimizeLegibility;
 
   font-family: vt323;
-  text-rendering: optimizeLegibility;
 }
