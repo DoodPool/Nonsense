@@ -1,11 +1,12 @@
 <template>
     <section>
+        <NonsenseBtn :btnTxt="'Shop all'" />
 
         <img class="footer-decoration" src="https://nonsense.jp/_image?href=%2F_astro%2Ffooter.bb9becd1.svg&f=svg" alt="">
         <footer class="app-footer">
             <div class="site-info">
                 <ul class="clean-list">
-                    <li>About us</li>
+                    <li class="white-space">About us</li>
                     <li>Refund policy</li>
                     <li>shipping policy</li>
                 </ul>
@@ -35,7 +36,13 @@
 </template>
 
 <script>
-export default {}
+    import NonsenseBtn from './NonsenseBtn.vue'
+
+export default {
+    components: {
+        NonsenseBtn,
+    }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -151,5 +158,10 @@ export default {}
             }
         }
     }
+}
+
+.discover-btn {
+    margin-block-start: 4rem;
+    margin-block-end: 2.5rem;
 }
 </style>

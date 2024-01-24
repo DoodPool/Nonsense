@@ -22,6 +22,7 @@ export default {}
 
     padding-inline: 25px;
     background-color: inherit;
+    z-index: 1;
 
     img {
         width: 70px;
