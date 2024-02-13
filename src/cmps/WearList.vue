@@ -2,7 +2,6 @@
     <ul class="wear-list">
         <li v-for="wear in wears" :key="wear.id">
             <article class="wear-preview">
-                <!-- <p>{{ wear.name }}</p> -->
                 <img :src="wear.imgUrl" alt="">
             </article>
         </li>
@@ -21,28 +20,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1, p { 
-    color: aqua;
-}
 ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px;
-    margin-block-start: 10px;
+
     list-style: none;
-    padding: 0;
+
+    padding-block: 6rem;
+    padding-inline: 2rem;
 }
 
-.wear-list li {
-    display: grid;
-    padding: 10px;
-
-    button {
-        justify-self: end;
-    }
-}
+// .wear-list li {
+//     display: grid;
+//     padding: 10px;
+// }
 
 img {
     width: 100%;
+    cursor: pointer;
 }
 </style>

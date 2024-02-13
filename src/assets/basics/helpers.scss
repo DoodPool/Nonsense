@@ -87,6 +87,19 @@
   width: 100%;
 }
 
-.white-space {
-  white-space: pre;
+.p-0 {
+  padding: 0; 
 }
+
+////////// האם יש דרך יותר טובה לעשות את זה 
+.left-4 {
+  left: 4rem;
+}
+
+.left-8 {
+  left: 8rem;
+}
+.right-8 {
+  right: 8rem;
+}
+//////////

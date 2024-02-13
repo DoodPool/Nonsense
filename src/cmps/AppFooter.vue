@@ -1,6 +1,6 @@
 <template>
     <section>
-        <NonsenseBtn :btnTxt="'Shop all'" />
+        <NonsenseBtn class="btn-center" :btnTxt="'Shop all'" />
 
         <img class="footer-decoration" src="https://nonsense.jp/_image?href=%2F_astro%2Ffooter.bb9becd1.svg&f=svg" alt="">
         <footer class="app-footer">
@@ -53,7 +53,6 @@ export default {
 
 .app-footer {
     display: grid;
-    // grid-template-columns: repeat(3, 1fr);
     grid-template-columns: 1fr 2fr 1fr;
     row-gap: 70px;
 
@@ -95,7 +94,6 @@ export default {
 
         p {
             font-size: 20px;
-            // padding-block: 8px;
         }
     }
 
@@ -161,7 +159,6 @@ export default {
 }
 
 .discover-btn {
-    margin-block-start: 4rem;
-    margin-block-end: 2.5rem;
+    margin-block: 4rem;
 }
 </style>

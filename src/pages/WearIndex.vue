@@ -1,23 +1,55 @@
 <template>
     <section>
         <WearList v-if="wears" :wears="slicedWears(0, 4)" />
+
         <article class="full">
             <img src="https://nonsense.jp/_image?href=%2F_astro%2Fsmasher_crewneck.65e37ab7.webp&f=webp" alt="">
-            <div class="h-full w-full">
-                <div class="test flex h-full w-full">
-                    <h1 class="white-space">
-                        smasher
-                        crewneck
-                    </h1>
-
-                    <NonsenseBtn :btnTxt="'Shop all'" />
+            <div class="display-area left-4">
+                <div class="btn-pos-left flex h-full">
+                    <div class="btn-container flex">
+                        <h1>
+                            <p>smasher</p>
+                            <p>crewneck</p>
+                        </h1>
+                        <NonsenseBtn class="small-btn" :btnTxt="'Discover now'" />
+                    </div>
                 </div>
             </div>
         </article>
+
         <WearList v-if="wears" :wears="slicedWears(4, 8)" />
-        <img src="https://nonsense.jp/_image?href=%2F_astro%2Fcorporate_jacket.e7d12d68.webp&f=webp" alt="">
+
+        <article>
+            <img src="https://nonsense.jp/_image?href=%2F_astro%2Fcorporate_jacket.e7d12d68.webp&f=webp" alt="">
+            <div class="display-area right-8">
+                <div class="btn-pos-right flex h-full">
+                    <div class="btn-container flex">
+                        <h1>
+                            <p>corporate</p>
+                            <p>jacket</p>
+                        </h1>
+                        <NonsenseBtn class="small-btn" :btnTxt="'Discover now'" />
+                    </div>
+                </div>
+            </div>
+        </article>
+
         <WearList v-if="wears" :wears="slicedWears(8, 12)" />
-        <img src="https://nonsense.jp/_image?href=%2F_astro%2Fcyberarm_gloves.d622d17a.webp&f=webp" alt="">
+
+        <article>
+            <img src="https://nonsense.jp/_image?href=%2F_astro%2Fcyberarm_gloves.d622d17a.webp&f=webp" alt="">
+            <div class="display-area left-8">
+                <div class="btn-pos-left flex h-full">
+                    <div class="btn-container flex">
+                        <h1>
+                            <p>cyberarm</p>
+                            <p>gloves</p>
+                        </h1>
+                        <NonsenseBtn class="small-btn" :btnTxt="'Discover now'" />
+                    </div>
+                </div>
+            </div>
+        </article>
     </section>
 </template>
 
@@ -58,51 +90,71 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section>*:not(.full) {
+    article:not(.full) {
     padding-inline: 64px;
-}
 
-h1 {
-    color: white;
+    .btn-pos-right, .btn-pos-left {
+        padding: 4rem;
+    }
 }
-
 
 img {
     width: 100%;
     user-select: none;
 }
 
-
 article {
     position: relative;
+    display: block;
 
-    img {
-        // height: auto;
-        display: block;
-    }
-
-    div {
+    .display-area {
         position: absolute;
-        // display: block;
-        inset: 0;
-        padding: 3rem;
-        // --tw-text-opacity: 1;
 
-        .test {
-            flex-direction: column;
-            // inset: 0;
-            align-items: start;
-            justify-content: end;
-            gap: 1rem;
-        }
+        padding-top: 0;
+        animation: fade-in .5s;
 
-        h1 {
-            white-space: pre-line;
-            width: 0rem; // is there a better way to do it?
-            
-            font-size: 4.5rem;
-            text-transform: uppercase;
-        }
+        top: 4rem;
+        bottom: 4rem;
     }
+
+    .btn-pos-right {
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    .btn-pos-left {
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+}
+
+img {
+    display: block;
+}
+
+h1 {
+    color: white;
+
+    line-height: .8em;
+    font-size: 4.5rem;
+    font-weight: 400;
+
+    text-transform: uppercase;
 }
 </style>
+
+
+48
+64
+
+80
+64
+
+64
