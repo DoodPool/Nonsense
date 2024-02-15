@@ -59,17 +59,6 @@ export default {
         text-transform: uppercase;
     }
 }
-
-.btn-right {
-    // padding-block: 0.5rem;
-    // padding-inline: 2rem;
-    // margin-inline-start: auto;
-}
-
-.btn-left {
-    color: blue;
-}
-
 .btn-center {
     padding-block: 0.5rem;
     padding-inline: 2rem;
