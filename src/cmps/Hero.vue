@@ -3,7 +3,9 @@
         <img src="https://nonsense.jp/_image?href=%2F_astro%2Fhero2.ea8d3e64.webp&f=webp" alt="">
         <img class="company-logos" src="https://nonsense.jp/_image?href=%2F_astro%2Flogos.9ea43969.webp&f=webp" alt="">
 
-        <NonsenseBtn class="btn-center" :btnTxt="'Discover now'" />
+        <router-link to="/wears" class="link-test">
+            <NonsenseBtn class="btn-center" :btnTxt="'Discover now'" />
+        </router-link>
     </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
-    <ul class="wear-list">
+    <ul>
         <li v-for="wear in wears" :key="wear.id">
-            <article class="wear-preview">
+            <article>
                 <img :src="wear.imgUrl" alt="">
             </article>
         </li>
@@ -30,11 +30,6 @@ ul {
     padding-block: 6rem;
     padding-inline: 2rem;
 }
-
-// .wear-list li {
-//     display: grid;
-//     padding: 10px;
-// }
 
 img {
     width: 100%;

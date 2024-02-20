@@ -34,7 +34,7 @@ export default {
     }
 
     button {
-        color: white;
+        // color: white;
         font-size: 36px;
         text-transform: uppercase;
 

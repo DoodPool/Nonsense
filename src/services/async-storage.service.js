@@ -4,6 +4,7 @@ export const storageService = {
     post,
     put,
     remove,
+    insert,
 }
 
 function query(entityType, delay = 500) {
@@ -13,7 +14,7 @@ function query(entityType, delay = 500) {
 
 function get(entityType, entityId) {
     return query(entityType).then(entities => {
-        const entity = entities.find(entity => entity._id === entityId)
+        const entity = entities.find(entity => entity.id === entityId)
         if (!entity) throw new Error(`Get failed, cannot find entity with id: ${entityId} in: ${entityType}`)
         return entity
     })
@@ -47,6 +48,15 @@ function remove(entityType, entityId) {
         entities.splice(idx, 1)
         _save(entityType, entities)
     })
+}
+
+async function insert(collectionName, items) {
+    var collection = await query(collectionName)
+    items.forEach(curr => (curr[ID_FIELD] = _makeId()))
+    collection.push(...items)
+
+    _save(collectionName, collection)
+    return Promise.resolve()
 }
 
 // Private functions

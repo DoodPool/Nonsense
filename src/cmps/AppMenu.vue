@@ -1,7 +1,9 @@
 <template>
     <section :class="{ 'none': shouldHideMenu }">
         <div class="menu-header flex space-between">
-            <img src="https://nonsense.jp/_astro/logo_wide.0473e46d.svg" alt="">
+            <!-- <router-link to="/wears" class="link-test"> -->
+                <img src="https://nonsense.jp/_astro/logo_wide.0473e46d.svg" alt="">
+            <!-- </router-link> -->
             <img @click="onToggleMenu()" src="https://nonsense.jp/_astro/cart_x.a9c2ad50.svg" alt="">
         </div>
 

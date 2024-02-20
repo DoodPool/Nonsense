@@ -5,21 +5,26 @@ const STORAGE_KEY = 'wear'
 
 export const wearService = {
     query,
+    get,
 }
 
- _createWears()
+_createWears()
 
 //  async function query(startIdx, endIdx) {
- async function query() {
+async function query() {
     var wears = await storageService.query(STORAGE_KEY)
 
     console.log(wears)
     if (!wears || !wears.length) {
         wears = _createWears()
-        await dbService.insert(KEY, wears)
+        await storageService.insert(STORAGE_KEY, wears)
     }
     // return wears.slice(startIdx, endIdx)
     return wears
+}
+
+async function get(id) {
+    return await storageService.get(STORAGE_KEY, id)
 }
 
 function _createWears() {
