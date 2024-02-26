@@ -79,6 +79,10 @@
   text-transform: capitalize;
 }
 
+.tx-upper {
+  text-transform: uppercase;
+}
+
 .h-full {
   height: 100%;
 }
@@ -88,7 +92,7 @@
 }
 
 .p-0 {
-  padding: 0; 
+  padding: 0;
 }
 
 ////////// האם יש דרך יותר טובה לעשות את זה 
@@ -99,9 +103,11 @@
 .left-8 {
   left: 8rem;
 }
+
 .right-8 {
   right: 8rem;
 }
+
 //////////
 
 
@@ -118,4 +124,16 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+}
+
+.mw-32 {
+  max-width: 32rem;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-700 {
+  font-weight: 700;
 }

@@ -1,9 +1,11 @@
 <template>
     <ul>
         <li v-for="wear in wears" :key="wear.id">
-            <article>
-                <img :src="wear.imgUrl" alt="">
-            </article>
+            <router-link :to="`/wears/${wear.id}`">
+                <article>
+                    <img :src="wear.imgUrl" alt="">
+                </article>
+            </router-link>
         </li>
     </ul>
 </template>
