@@ -3,24 +3,23 @@
   margin: 0;
 }
 
+html {
+  // background-color: black;
+}
+
 ::selection {
   background-color: #ff3a3ae0;
 }
 
-
-html {
+::-webkit-scrollbar {
   background-color: black;
+  width: 10px;
+}
 
-  ::-webkit-scrollbar {
-    background-color: transparent;
-    width: 10px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: #ffffff;
-    background-clip: content-box;
-    border: 3px solid transparent;
-  }
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  background-clip: content-box;
+  border: 3px solid transparent;
 }
 
 body {
@@ -29,4 +28,18 @@ body {
   // text-rendering: optimizeLegibility;
 
   font-family: vt323;
+}
+
+.swiper-pagination {
+  display: flex;
+  flex-direction: column;
+  // position: relative;
+  // left: 200px;
+  // bottom: 10px;
+  background-color: aqua;
+  z-index: 11;
+}
+
+.swiper-wrapper {
+  background-color: aquamarine;
 }

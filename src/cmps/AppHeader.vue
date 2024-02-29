@@ -1,8 +1,8 @@
 <template>
     <header class="app-header">
-        <button @click="onToggleMenu()">Menu</button>
+        <button :class="{ 'home': isHome }" @click="onToggleMenu()">Menu</button>
         <img src="https://nonsense.jp/_image?href=%2F_astro%2Flogo.0fcf7e5a.gif&f=webp" alt="">
-        <button>Cart (0)</button>
+        <button :class="{ 'home': isHome }">Cart (0)</button>
     </header>
 </template>
 
@@ -10,6 +10,9 @@
 export default {
     props: {
         onToggleMenu: {
+            required: true,
+        },
+        isHome: {
             required: true,
         },
     },
@@ -47,6 +50,10 @@ export default {
         &:first-child {
             margin-inline-end: 50px;
         }
+    }
+
+    .home {
+        color: white;
     }
 }
 </style>

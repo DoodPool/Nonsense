@@ -90,10 +90,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    article:not(.full) {
+section {
+    background-color: black;
+}
+
+article:not(.full) {
     padding-inline: 64px;
 
-    .btn-pos-right, .btn-pos-left {
+    .btn-pos-right,
+    .btn-pos-left {
         padding: 4rem;
     }
 }
@@ -149,12 +154,3 @@ h1 {
     text-transform: uppercase;
 }
 </style>
-
-
-48
-64
-
-80
-64
-
-64

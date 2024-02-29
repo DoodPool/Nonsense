@@ -1,10 +1,10 @@
 <template>
-  <AppHeader :onToggleMenu="onToggleMenu" />
+  <AppHeader :onToggleMenu="onToggleMenu" :isHome="isHome" />
   <AppMenu :shouldHideMenu="shouldHideMenu" :onToggleMenu="onToggleMenu" />
-  <main>
+  <main >
     <RouterView />
   </main>
-  <AppFooter />
+  <AppFooter :isHome="isHome" />
 </template>
 
 <script>
@@ -17,11 +17,28 @@ export default {
   data() {
     return {
       shouldHideMenu: true,
+      isHome: false
     }
+  },
+  watch: {
+    '$route'() {
+      this.checkIsHome()
+    }
+  },
+  created() {
+    this.checkIsHome()
   },
   methods: {
     onToggleMenu() {
       return this.shouldHideMenu = !this.shouldHideMenu
+    },
+    checkIsHome() {
+      const currUrl = window.location.href
+      if (currUrl === "http://localhost:5173/#/") {
+        this.isHome = true
+      } else {
+        this.isHome = false
+      }
     },
   },
   components: {
@@ -34,4 +51,5 @@ export default {
 </script>
 
 
-<style scoped></style>
+<style scoped>
+</style>

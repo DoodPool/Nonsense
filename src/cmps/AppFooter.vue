@@ -1,9 +1,10 @@
 <template>
     <section>
-        <NonsenseBtn class="btn-center" :btnTxt="'Shop all'" />
+        <NonsenseBtn v-if="isHome" class="btn-center " :btnTxt="'Shop all'" />
 
-        <img class="footer-decoration" src="https://nonsense.jp/_image?href=%2F_astro%2Ffooter.bb9becd1.svg&f=svg" alt="">
-        <footer class="app-footer">
+        <img :class="{ 'home': isHome }" class="footer-decoration"
+            src="https://nonsense.jp/_image?href=%2F_astro%2Ffooter.bb9becd1.svg&f=svg" alt="">
+        <footer :class="{ 'not-home': !isHome }" class="app-footer">
             <div class="site-info">
                 <ul class="clean-list">
                     <li class="white-space">About us</li>
@@ -21,7 +22,8 @@
                 </form>
             </div>
 
-            <img src="https://nonsense.jp/_image?href=%2F_astro%2Ficon.fc3a7207.svg&f=svg" alt="">
+            <img v-if="isHome" src="https://nonsense.jp/_image?href=%2F_astro%2Ficon.fc3a7207.svg&f=svg" alt="">
+            <img v-else src="https://nonsense.jp/_image?href=%2F_astro%2Ficon_dark.affb8e1b.svg&f=svg" alt="">
 
             <p><span class="tx-cap">Copyright</span> © 2023 nonsense japan</p>
 
@@ -36,29 +38,39 @@
 </template>
 
 <script>
-    import NonsenseBtn from './NonsenseBtn.vue'
+import NonsenseBtn from './NonsenseBtn.vue'
 
 export default {
+    props: {
+        isHome: {
+            required: true,
+        },
+    },
     components: {
         NonsenseBtn,
-    }
+    },
 }
 </script>
 
 <style lang="scss" scoped>
+.black {
+    background-color: black;
+}
+
 .footer-decoration {
     display: block;
     width: 100%;
+    background-color: transparent;
+    filter: brightness(0);
 }
 
 .app-footer {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    row-gap: 70px;
+    row-gap: 4rem;
 
     padding-inline: 4rem;
-    padding-block-end: 2.25rem;
-    padding-block-start: 1.75rem;
+    padding-block: 2rem;
 
     background-color: rgb(252 238 10);
 
@@ -133,6 +145,7 @@ export default {
 
     img {
         margin-inline-start: auto;
+        width: 16rem;
     }
 
     .social-links-container {
@@ -160,5 +173,40 @@ export default {
 
 .discover-btn {
     margin-block: 4rem;
+}
+
+.home {
+    // background-color: black;
+    filter: brightness(1);
+}
+
+.not-home {
+    background-color: black;
+    color: white;
+
+    form {
+        button {
+            background-color: white;
+            color: black;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        input {
+            background-color: black;
+            border-color: white;
+            color: white;
+        }
+    }
+
+    .social-links-container a {
+        color: white;
+
+        &:hover {
+            color: darken($color: white, $amount: 35);
+        }
+    }
 }
 </style>

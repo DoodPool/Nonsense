@@ -1,9 +1,9 @@
 <template>
     <section :class="{ 'none': shouldHideMenu }">
         <div class="menu-header flex space-between">
-            <!-- <router-link to="/wears" class="link-test"> -->
-                <img src="https://nonsense.jp/_astro/logo_wide.0473e46d.svg" alt="">
-            <!-- </router-link> -->
+            <router-link to="/">
+                <img @click="onToggleMenu()" src="https://nonsense.jp/_astro/logo_wide.0473e46d.svg" alt="">
+            </router-link>
             <img @click="onToggleMenu()" src="https://nonsense.jp/_astro/cart_x.a9c2ad50.svg" alt="">
         </div>
 
@@ -55,11 +55,11 @@ section {
         padding-inline: 2rem;
         padding-block-start: 2.5rem;
 
-        img:first-child {
+        a img {
             height: 1.25rem;
         }
 
-        img:last-child {
+        img {
             height: 1.75rem;
         }
     }
