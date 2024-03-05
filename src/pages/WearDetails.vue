@@ -1,7 +1,8 @@
 <template>
     <section>
         <div class="test">
-            <WearCarousel :imgUrls="wear.imgUrls"/>
+            <WearCarousel :imgUrls="wear.imgUrls" />
+            <!-- <canvas ref="canvas" width="600" height="600"></canvas> -->
         </div>
         <div class="wear-info">
             <h1 class="tx-upper">NØИSENSE x cyberpunk: edgerunners - {{ wear.name }} </h1>
@@ -24,7 +25,8 @@
             <div class="mw-32">
                 <article>
                     <p>{{ wear.aboutWear }}</p>
-                    <p class="fw-700">*In light of the holiday season and associated logistical challenges, we anticipate
+                    <p class="fw-700">*In light of the holiday season and associated logistical challenges, we
+                        anticipate
                         shipping this
                         particular
                         item in the early to mid-January timeframe, ensuring a smooth and timely delivery to you.</p>
@@ -33,7 +35,8 @@
 
                 <WearSizeChart :chart="wear.sizeChart" />
 
-                <p class="fw-700 tx-upper">For all international orders, customers will be responsible for any additional
+                <p class="fw-700 tx-upper">For all international orders, customers will be responsible for any
+                    additional
                     local
                     customs
                     fees and duties.
@@ -42,7 +45,7 @@
         </div>
     </section>
 </template>
-  
+
 <script>
 import { wearService } from '../services/wear.service.local'
 import WearSizeChart from '../cmps/WearSizeChart.vue'
@@ -61,8 +64,44 @@ export default {
             this.wear = await wearService.get(wearId)
             // this.wear = this.wears.find(wear => wear._id === wearId)
         } catch (err) {
-            console.log(`Couldn't get wears...`);
+            console.log(`Couldn't get wears...`)
         }
+    },
+    // mounted() {
+    //     this.drawPixelatedImage()
+    // },
+    methods: {
+        drawPixelatedImage() {
+            const canvas = this.$refs.canvas
+
+            canvas.style.cssText = 'image-rendering: optimizeSpeed;' + // FireFox < 6.0
+                'image-rendering: -moz-crisp-edges;' + // FireFox
+                'image-rendering: -o-crisp-edges;' +  // Opera
+                'image-rendering: -webkit-crisp-edges;' + // Chrome
+                'image-rendering: crisp-edges;' + // Chrome
+                'image-rendering: -webkit-optimize-contrast;' + // Safari
+                'image-rendering: pixelated; ' + // Future browsers
+                '-ms-interpolation-mode: nearest-neighbor;'; // IE
+
+            const context = canvas.getContext('2d')
+
+            const image = new Image()
+            image.src = 'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/23110309502_1_c08c7d09-c692-4163-a0d4-f6af9d8e2211.png'
+            image.onload = () => {
+                context.webkitImageSmoothingEnabled = false
+                context.mozImageSmoothingEnabled = false
+                context.msImageSmoothingEnabled = false
+                context.imageSmoothingEnabled = false
+
+                var percent = 0.1
+                var scaledWidth = canvas.width * percent
+                var scaledHeight = canvas.height * percent
+
+                context.drawImage(image, 0, 0, scaledWidth, scaledHeight)
+                context.drawImage(canvas, 0, 0, scaledWidth, scaledHeight, 0, 0, canvas.width, canvas.height)
+                context.clearRect(0, 0, scaledWidth, scaledHeight);
+            }
+        },
     },
     components: {
         WearSizeChart,
@@ -70,7 +109,7 @@ export default {
     },
 }
 </script>
-  
+
 <style scoped>
 section {
     background-color: white;
@@ -151,6 +190,8 @@ img {
 }
 
 .test {
-    width: 728px;
+    max-width: 728px;
+    min-width: 500px;
+    margin-inline-start: 100px;
 }
 </style>
