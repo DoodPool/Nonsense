@@ -1,5 +1,5 @@
 <template>
-    <header class="app-header">
+    <header class="app-header" :class="{ 'fixed': !isAbout, 'sticky': isAbout }">
         <button :class="{ 'home': isHome }" @click="onToggleMenu()">Menu</button>
         <img src="https://nonsense.jp/_image?href=%2F_astro%2Flogo.0fcf7e5a.gif&f=webp" alt="">
         <button :class="{ 'home': isHome }">Cart (0)</button>
@@ -8,6 +8,19 @@
 
 <script>
 export default {
+    data() {
+        return {
+            isAbout: false
+        }
+    },
+    watch: {
+    '$route'() {
+      this.checkIsAbout()
+    }
+  },
+  created() {
+    this.checkIsAbout()
+  },
     props: {
         onToggleMenu: {
             required: true,
@@ -16,12 +29,22 @@ export default {
             required: true,
         },
     },
+    methods: {
+        checkIsAbout() {
+            const currUrl = window.location.href
+            if (currUrl === "http://localhost:5173/#/about") {
+                this.isAbout = true
+            } else {
+                this.isAbout = false
+            }
+        },
+    },
 }
 </script>
 
 <style lang="scss" scoped>
 .app-header {
-    position: fixed;
+    top: 0;
 
     display: flex;
     align-items: center;

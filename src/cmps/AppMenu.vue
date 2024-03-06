@@ -8,9 +8,13 @@
         </div>
 
         <nav>
-            <p>Shop</p>
+            <router-link to="/wears" @click="onToggleMenu()">
+                <span>Shop</span>
+            </router-link>
             <p>Lookbook</p>
-            <p>About</p>
+            <router-link to="/about" @click="onToggleMenu()">
+                <span>About</span>
+            </router-link>
         </nav>
 
         <div class="social-links-container clean-list">
@@ -39,6 +43,7 @@ export default {
 <style lang="scss" scoped>
 section {
     position: fixed;
+    top: 0;
 
     display: grid;
     grid-template-rows: 5rem 1fr 5rem;
@@ -50,6 +55,7 @@ section {
     z-index: 10;
 
     color: white;
+    animation: fade-in .2s;
 
     .menu-header {
         padding-inline: 2rem;
@@ -70,7 +76,7 @@ section {
         font-size: 3.75rem;
         text-transform: uppercase;
         line-height: 1.125;
-        // animation: slide-in .5s;
+        // animation: slide-in 2s;
     }
 
     .social-links-container {
@@ -105,5 +111,10 @@ img {
 
 .none {
     display: none;
+}
+
+a {
+    color: white;
+    text-decoration: none;
 }
 </style>

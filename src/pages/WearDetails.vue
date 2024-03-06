@@ -6,40 +6,33 @@
         </div>
         <div class="wear-info">
             <h1 class="tx-upper">NØИSENSE x cyberpunk: edgerunners - {{ wear.name }} </h1>
-            <p class="price">$98.99</p>
+            <p class="price">${{ wear.price }}</p>
             <p class="tax">Tax included.</p>
-            <article>
+            <article v-if="wear.color">
                 <h2>color:</h2>
-                <button class="tx-cap">gun metal</button>
-                <button class="tx-cap">deep blue</button>
+                <button class="tx-cap" v-for="color in wear.color">{{ color }}</button>
             </article>
-            <article>
+            <article v-if="sizeArr">
                 <h2>size:</h2>
-                <button class="tx-upper">s</button>
-                <button class="tx-upper">m</button>
-                <button class="tx-upper">l</button>
-                <button class="tx-upper">xl</button>
-                <button class="tx-upper">xxl</button>
+                <button class="tx-upper" v-for="size in sizeArr">{{ size }}</button>
             </article>
             <button class="add-btn tx-upper">add to bag</button>
             <div class="mw-32">
                 <article>
                     <p>{{ wear.aboutWear }}</p>
-                    <p class="fw-700">*In light of the holiday season and associated logistical challenges, we
-                        anticipate
-                        shipping this
-                        particular
-                        item in the early to mid-January timeframe, ensuring a smooth and timely delivery to you.</p>
-                    <p>{{ wear.sizeOnModel }}</p>
+                    <p class="fw-700">
+                        *In light of the holiday season and associated logistical challenges, we anticipate shipping
+                        this particular
+                        item in the early to mid-January timeframe, ensuring a smooth and timely delivery to you.
+                    </p>
+                    <p v-if="wear.sizeOnModel">{{ wear.sizeOnModel }}</p>
                 </article>
 
-                <WearSizeChart :chart="wear.sizeChart" />
+                <WearSizeChart v-if="wear.sizeChart" :chart="wear.sizeChart" />
 
-                <p class="fw-700 tx-upper">For all international orders, customers will be responsible for any
-                    additional
-                    local
-                    customs
-                    fees and duties.
+                <p class="fw-700 tx-upper">
+                    For all international orders, customers will be responsible for any additional
+                    local customs fees and duties.
                 </p>
             </div>
         </div>
@@ -55,6 +48,7 @@ export default {
     data() {
         return {
             wear: null,
+            sizeArr: null,
         }
     },
     async created() {
@@ -65,6 +59,8 @@ export default {
             // this.wear = this.wears.find(wear => wear._id === wearId)
         } catch (err) {
             console.log(`Couldn't get wears...`)
+        } finally {
+            this.settWearSize()
         }
     },
     // mounted() {
@@ -102,12 +98,22 @@ export default {
                 context.clearRect(0, 0, scaledWidth, scaledHeight);
             }
         },
+        settWearSize() {
+            let filteredSize
+            if (this.wear.name === 'reflective balaclava' || this.wear.name === 'cyberarm gloves') {
+                filteredSize = ['os']
+            } else {
+                filteredSize = this.wear.sizeChart.size.filter((size) => size !== '')
+            }
+            this.sizeArr = filteredSize
+        },
     },
     components: {
         WearSizeChart,
         WearCarousel,
     },
 }
+
 </script>
 
 <style scoped>

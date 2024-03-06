@@ -34,7 +34,11 @@ function _createWears() {
             {
                 id: '101',
                 name: 'sandevistan hoodie',
-                imgUrl: 'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/1_d6bcd3ef-5c3f-4ddf-9e8f-44e73527575d.png?width=1080',
+                price: 89.99,
+                color: [
+                    'cyber yellow',
+                    'black',
+                ],
                 imgUrls: [
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/1_d6bcd3ef-5c3f-4ddf-9e8f-44e73527575d.png',
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/CDPR-ECOM-69.jpg',
@@ -120,7 +124,7 @@ function _createWears() {
             {
                 id: '102',
                 name: 'mc night jacket',
-                imgUrl: 'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/23110809767.png?width=1080',
+                price: 109.99,
                 imgUrls: [
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/23110809767.png',
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/CDPR-ECOM-54.jpg',
@@ -201,7 +205,11 @@ function _createWears() {
             {
                 id: '103',
                 name: 'corporate jacket',
-                imgUrl: 'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/23110309502_1_c08c7d09-c692-4163-a0d4-f6af9d8e2211.png?width=1080',
+                price: 98.99,
+                color: [
+                    'gun metal',
+                    'deep blue',
+                ],
                 imgUrls: [
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/23110309502_1_c08c7d09-c692-4163-a0d4-f6af9d8e2211.png',
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/CDPR-ECOM-17.jpg',
@@ -285,7 +293,7 @@ function _createWears() {
             {
                 id: '104',
                 name: 'reflective balaclava',
-                imgUrl: 'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/20231113103759.png?width=1080',
+                price: 39.99,
                 imgUrls: [
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/20231113103759.png',
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/CDPR-ECOM-5.jpg',
@@ -298,18 +306,15 @@ function _createWears() {
                 aboutWear: `Meet the Reflective Balaclava: Water-resistant and Adams Smasher-inspired with reflective patterns.
                             Crafted from 95% polyester and 5% spandex, it features a printed logo on the back and a side woven label.`,
                 sizeOnModel: `Approximate Dimensions: H38cm x W26cm ( 14.9 x 10.2 Inches )`,
-                sizeChart: {
-                    size: [
-                        'nothing',
-                    ],
-                    'fix code': [
-                    ],
-                },
             },
             {
                 id: '105',
                 name: 'smasher crewneck',
-                imgUrl: 'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/1_9d1d39cc-4e04-4683-9ae7-c0795f4737df.png?width=1080',
+                price: 59.99,
+                color: [
+                    'gun metal',
+                    'black',
+                ],
                 imgUrls: [
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/1_9d1d39cc-4e04-4683-9ae7-c0795f4737df.png',
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/CDPR-ECOM-37.jpg',
@@ -393,7 +398,11 @@ function _createWears() {
             {
                 id: '106',
                 name: 'netizens t',
-                imgUrl: 'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/1_4b20f499-59ba-4fab-a730-ed8bd940e4cc.png?width=1080',
+                price: 54.99,
+                color: [
+                    'cyber yellow',
+                    'white',
+                ],
                 imgUrls: [
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/1_4b20f499-59ba-4fab-a730-ed8bd940e4cc.png',
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/CDPR-ECOM-33.jpg',
@@ -477,7 +486,11 @@ function _createWears() {
             {
                 id: '107',
                 name: 'smasher crewneck',
-                imgUrl: 'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/3_0c3bb4fc-5255-4781-b534-e1037c7d82ca.png?width=1080',
+                price: 59.99,
+                color: [
+                    'gun metal',
+                    'black',
+                ],
                 imgUrls: [
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/1_9d1d39cc-4e04-4683-9ae7-c0795f4737df.png',
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/CDPR-ECOM-37.jpg',
@@ -561,7 +574,11 @@ function _createWears() {
             {
                 id: '108',
                 name: 'corporate jacket',
-                imgUrl: 'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/23110309510_1_e467d6a4-cf1b-46fc-a990-7c228e57b0a7.png?width=1080',
+                price: 98.99,
+                color: [
+                    'gun metal',
+                    'deep blue',
+                ],
                 imgUrls: [
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/23110309502_1_c08c7d09-c692-4163-a0d4-f6af9d8e2211.png',
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/CDPR-ECOM-17.jpg',
@@ -645,7 +662,7 @@ function _createWears() {
             {
                 id: '109',
                 name: 'cyberarm gloves',
-                imgUrl: 'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/20231109152634.png?width=1080',
+                price: 54.99,
                 imgUrls: [
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/20231109152634.png',
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/20231109103900.png',
@@ -655,7 +672,6 @@ function _createWears() {
                 aboutWear: `Introducing the Cyberarm Gloves: Crafted from water-resistant neoprene, PU,
                             and membrane, these gloves draw inspiration from the iconic Rebecca's cyber arms. With touch-sensitive index finger and thumb,
                             they seamlessly blend functionality with style for a futuristic edge in daily life.`,
-                sizeOnModel: `fix codeeeeeeeeeeeee ---------- no description`,
                 sizeChart: {
                     size: [
                         'size',
@@ -671,7 +687,11 @@ function _createWears() {
             {
                 id: '110',
                 name: 'sandevistan hoodie',
-                imgUrl: 'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/3_8ea90605-7b7b-4e92-9b53-d69fb79a037c_1.png?width=1080',
+                price: 89.99,
+                color: [
+                    'cyber yellow',
+                    'black',
+                ],
                 imgUrls: [
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/1_d6bcd3ef-5c3f-4ddf-9e8f-44e73527575d.png',
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/CDPR-ECOM-69.jpg',
@@ -757,7 +777,7 @@ function _createWears() {
             {
                 id: '111',
                 name: 'night city sweatpants',
-                imgUrl: 'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/1_2_964d2146-5943-4e3b-ba2e-43c7ec1b5ce3.png?width=1080',
+                price: 69.99,
                 imgUrls: [
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/1_2_964d2146-5943-4e3b-ba2e-43c7ec1b5ce3.png',
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/CDPR-ECOM-13.jpg',
@@ -831,7 +851,11 @@ function _createWears() {
             {
                 id: '112',
                 name: 'netizens t',
-                imgUrl: 'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/3_7aaf1f68-88d0-4624-91bd-ab1d0c7d81a6.png?width=1080',
+                price: 54.99,
+                color: [
+                    'cyber yellow',
+                    'white',
+                ],
                 imgUrls: [
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/1_4b20f499-59ba-4fab-a730-ed8bd940e4cc.png',
                     'https://cdn.shopify.com/s/files/1/0649/5197/6159/files/CDPR-ECOM-33.jpg',

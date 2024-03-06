@@ -11,7 +11,9 @@
                             <p>smasher</p>
                             <p>crewneck</p>
                         </h1>
-                        <NonsenseBtn class="small-btn" :btnTxt="'Discover now'" />
+                        <router-link to="/wears/105">
+                            <NonsenseBtn class="small-btn" :btnTxt="'Discover now'" />
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -28,7 +30,9 @@
                             <p>corporate</p>
                             <p>jacket</p>
                         </h1>
-                        <NonsenseBtn class="small-btn" :btnTxt="'Discover now'" />
+                        <router-link to="/wears/103">
+                            <NonsenseBtn class="small-btn" :btnTxt="'Discover now'" />
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -45,7 +49,9 @@
                             <p>cyberarm</p>
                             <p>gloves</p>
                         </h1>
-                        <NonsenseBtn class="small-btn" :btnTxt="'Discover now'" />
+                        <router-link to="/wears/109">
+                            <NonsenseBtn class="small-btn" :btnTxt="'Discover now'" />
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -152,5 +158,10 @@ h1 {
     font-weight: 400;
 
     text-transform: uppercase;
+}
+
+a {
+    color: black;
+    text-decoration: none;
 }
 </style>

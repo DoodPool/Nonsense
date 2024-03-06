@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
+import About from '../pages/About.vue'
 import WearsPage from '../pages/WearsPage.vue'
 import WearDetails from '../pages/WearDetails.vue'
 
@@ -10,6 +11,11 @@ const routerOptions = {
 			path: '/',
 			name: 'home',
 			component: Home,
+		},
+		{
+			path: '/about',
+			name: 'about',
+			component: About,
 		},
 		{
 			path: '/wears',

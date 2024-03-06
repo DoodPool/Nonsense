@@ -7,7 +7,9 @@
         <footer :class="{ 'not-home': !isHome }" class="app-footer">
             <div class="site-info">
                 <ul class="clean-list">
-                    <li class="white-space">About us</li>
+                    <router-link to="/about">
+                        <li>About us</li>
+                    </router-link>
                     <li>Refund policy</li>
                     <li>shipping policy</li>
                 </ul>
@@ -90,6 +92,11 @@ export default {
             &:hover {
                 color: lighten($color: black, $amount: 35);
             }
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
         }
     }
 
@@ -183,6 +190,10 @@ export default {
 .not-home {
     background-color: black;
     color: white;
+
+    .site-info a {
+        color: white;
+    }
 
     form {
         button {

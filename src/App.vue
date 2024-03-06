@@ -1,7 +1,7 @@
 <template>
   <AppHeader :onToggleMenu="onToggleMenu" :isHome="isHome" />
   <AppMenu :shouldHideMenu="shouldHideMenu" :onToggleMenu="onToggleMenu" />
-  <main >
+  <main>
     <RouterView />
   </main>
   <AppFooter :isHome="isHome" />
@@ -51,5 +51,4 @@ export default {
 </script>
 
 
-<style scoped>
-</style>
+<style scoped></style>

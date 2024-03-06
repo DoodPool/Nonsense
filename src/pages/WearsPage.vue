@@ -3,9 +3,9 @@
         <li v-for="wear in wears" :key="wear.id">
             <router-link :to="`/wears/${wear.id}`" class="link-test">
                 <article>
-                    <img :src="wear.imgUrl" alt="">
+                    <img :src="wear.imgUrls[0]" alt="">
                     <p> NØИSENSE x cyberpunk: edgerunners - {{ wear.name }} </p>
-                    <p>100$</p>
+                    <p>{{ wear.price }}$</p>
                 </article>
             </router-link>
         </li>

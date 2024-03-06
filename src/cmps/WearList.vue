@@ -3,7 +3,7 @@
         <li v-for="wear in wears" :key="wear.id">
             <router-link :to="`/wears/${wear.id}`">
                 <article>
-                    <img :src="wear.imgUrl" alt="">
+                    <img :src="wear.imgUrls[0]" alt="">
                 </article>
             </router-link>
         </li>
