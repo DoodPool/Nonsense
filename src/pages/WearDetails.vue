@@ -2,7 +2,6 @@
     <section>
         <div class="test">
             <WearCarousel :imgUrls="wear.imgUrls" />
-            <!-- <canvas ref="canvas" width="600" height="600"></canvas> -->
         </div>
         <div class="wear-info">
             <h1 class="tx-upper">NØИSENSE x cyberpunk: edgerunners - {{ wear.name }} </h1>
@@ -43,6 +42,7 @@
 import { wearService } from '../services/wear.service.local'
 import WearSizeChart from '../cmps/WearSizeChart.vue'
 import WearCarousel from '../cmps/WearCarousel.vue'
+import PixelatedImg from '../cmps/PixelatedImg.vue'
 
 export default {
     data() {
@@ -111,6 +111,7 @@ export default {
     components: {
         WearSizeChart,
         WearCarousel,
+        PixelatedImg,
     },
 }
 

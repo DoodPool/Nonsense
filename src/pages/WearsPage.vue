@@ -3,7 +3,8 @@
         <li v-for="wear in wears" :key="wear.id">
             <router-link :to="`/wears/${wear.id}`" class="link-test">
                 <article>
-                    <img :src="wear.imgUrls[0]" alt="">
+                    <!-- <img :src="wear.imgUrls[0]" alt=""> -->
+                    <PixelatedImg :imgSrc="wear.imgUrls[0]"/>
                     <p> NØИSENSE x cyberpunk: edgerunners - {{ wear.name }} </p>
                     <p>{{ wear.price }}$</p>
                 </article>
@@ -14,7 +15,7 @@
   
 <script>
 import { wearService } from '../services/wear.service.local'
-import WearList from '../cmps/WearList.vue'
+import PixelatedImg from '../cmps/PixelatedImg.vue'
 
 export default {
     data() {
@@ -31,7 +32,7 @@ export default {
         }
     },
     components: {
-        WearList,
+        PixelatedImg,
     },
 }
 </script>

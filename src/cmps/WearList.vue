@@ -3,7 +3,8 @@
         <li v-for="wear in wears" :key="wear.id">
             <router-link :to="`/wears/${wear.id}`">
                 <article>
-                    <img :src="wear.imgUrls[0]" alt="">
+                    <PixelatedImg :imgSrc="wear.imgUrls[0]"/>
+                    <!-- <img :src="wear.imgUrls[0]" alt=""> -->
                 </article>
             </router-link>
         </li>
@@ -11,12 +12,17 @@
 </template>
 
 <script>
+import PixelatedImg from '../cmps/PixelatedImg.vue'
+
 export default {
     props: {
         wears: {
             type: Array,
             required: true,
         }
+    },
+    components: {
+        PixelatedImg,
     },
 }
 </script>
