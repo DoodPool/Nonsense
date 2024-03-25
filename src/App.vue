@@ -1,5 +1,5 @@
 <template>
-  <AppHeader :onToggleMenu="onToggleMenu" :isHome="isHome" />
+  <AppHeader :onToggleMenu="onToggleMenu" />
   <AppMenu :shouldHideMenu="shouldHideMenu" :onToggleMenu="onToggleMenu" />
   <main>
     <RouterView />
@@ -17,13 +17,20 @@ export default {
   data() {
     return {
       shouldHideMenu: true,
-      isHome: false
+      isHome: false,
+      isMobile: null,
     }
   },
   watch: {
     '$route'() {
       this.checkIsHome()
+      this.bodyBcToggle()
+      this.onResize()
     }
+  },
+  mounted() {
+    this.bodyBcToggle()
+    window.addEventListener("resize", this.onResize)
   },
   created() {
     this.checkIsHome()
@@ -39,6 +46,18 @@ export default {
       } else {
         this.isHome = false
       }
+    },
+    bodyBcToggle() {
+      if (this.isHome) {
+        document.body.classList.add('bg-dark')
+        document.body.classList.remove('bg-light')
+      } else {
+        document.body.classList.add('bg-light')
+        document.body.classList.remove('bg-dark')
+      }
+    },
+    onResize() {
+      (window.innerWidth < 755) ? this.isMobile = true : this.isMobile = false
     },
   },
   components: {

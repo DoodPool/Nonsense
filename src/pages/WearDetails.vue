@@ -119,7 +119,6 @@ export default {
 
 <style scoped>
 section {
-    background-color: white;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding-block-start: 5rem;

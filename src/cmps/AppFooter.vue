@@ -1,6 +1,8 @@
 <template>
     <section>
-        <NonsenseBtn v-if="isHome" class="btn-center " :btnTxt="'Shop all'" />
+        <router-link  v-if="isHome" to="/wears" class="link-test">
+            <NonsenseBtn class="btn-center " :btnTxt="'Shop all'" />
+        </router-link>
 
         <img :class="{ 'home': isHome }" class="footer-decoration"
             src="https://nonsense.jp/_image?href=%2F_astro%2Ffooter.bb9becd1.svg&f=svg" alt="">
@@ -55,10 +57,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.black {
-    background-color: black;
-}
-
 .footer-decoration {
     display: block;
     width: 100%;
@@ -183,7 +181,6 @@ export default {
 }
 
 .home {
-    // background-color: black;
     filter: brightness(1);
 }
 

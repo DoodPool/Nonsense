@@ -1,5 +1,5 @@
 <template>
-    <a class="discover-btn" @click="onTest()">
+    <a class="discover-btn">
         <img src="https://nonsense.jp/_image?href=%2F_astro%2Fbutton.ed2ea0e8.svg&f=svg" alt="">
         <span>{{ btnTxt }}</span>
     </a>
@@ -12,11 +12,6 @@ export default {
             type: String,
             required: true,
         },
-    },
-    methods: {
-        onTest() {
-            console.log('test')
-        }
     },
 }
 </script>

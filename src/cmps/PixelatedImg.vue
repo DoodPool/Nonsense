@@ -1,9 +1,7 @@
 <template>
     <div>
-        <img ref="img"
-            :src="imgSrc"
-            alt="">
-        <canvas ref="canvas" width="515.5" height="515.5"></canvas>
+        <img ref="img" :src="imgSrc" alt="">
+        <canvas width="515.5" height="515.5" ref="canvas"></canvas>
         <!-- <canvas ref="canvas" width="321.25" height="324.25"></canvas> -->
     </div>
 </template>
@@ -65,10 +63,17 @@ export default {
         if (this.ctx = this.canvas.getContext("2d"), this.subCanvas = document.createElement("canvas"),
             this.subCtx = this.subCanvas.getContext("2d"), !this.ctx || !this.subCtx) return
 
+        this.img = this.$refs.img
+
         this.canvas.width = this.canvas.clientWidth
         this.canvas.height = this.canvas.clientHeight
 
-        this.img = this.$refs.img
+        // console.log(this.canvas.clientHeight);
+        // console.log(this.img.clientHeight);
+
+        // console.log(this.canvas.clientWidth);
+        // console.log(this.img.clientWidth);
+
 
         this.draw()
 
@@ -143,6 +148,10 @@ export default {
                     return
                 }
                 this.ctx.drawImage(this.subCanvas, 0, 0, this.subCanvas.width, this.subCanvas.height, 0, 0, this.canvas.width, this.canvas.height)
+                // console.log('this.subCanvas.width', this.subCanvas.width);
+                // console.log('this.subCanvas.height', this.subCanvas.height);
+                // console.log('this.canvas.width', this.canvas.width);
+                // console.log('this.canvas.height', this.canvas.height);
                 if (this.factor === 1) {
                     this.canvas.style.opacity = "0"
                     this.img.style.opacity = "1"
@@ -171,9 +180,19 @@ div {
         position: absolute;
         left: 0;
         top: 0;
-        height: 100%;
+        height: auto;
         width: 100%;
         cursor: pointer;
     }
 }
 </style>
+
+
+
+bad
+before 324 18 324 18
+after 32 1 324 18
+
+good
+before 324 327 324 327
+after 32 32 324 327

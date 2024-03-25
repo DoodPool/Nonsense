@@ -1,11 +1,16 @@
 <template>
-    <div>
-        <img src="https://nonsense.jp/_image?href=%2F_astro%2Fhero2.ea8d3e64.webp&f=webp" alt="">
-        <img class="company-logos" src="https://nonsense.jp/_image?href=%2F_astro%2Flogos.9ea43969.webp&f=webp" alt="">
-
-        <router-link to="/wears" class="link-test">
-            <NonsenseBtn class="btn-center" :btnTxt="'Discover now'" />
-        </router-link>
+    <div class="hero-container">
+        <!-- <img src="https://nonsense.jp/_image?href=%2F_astro%2Fhero2.ea8d3e64.webp&f=webp" alt=""> -->
+        <img src="https://nonsense.jp/_image?href=%2F_astro%2Fhero_mobile.e76a7bd3.webp&f=webp" alt="">
+        <div class="sec">
+            <div class="third">
+                <img class="company-logos" src="https://nonsense.jp/_image?href=%2F_astro%2Flogos.9ea43969.webp&f=webp"
+                    alt="">
+            </div>
+            <router-link to="/wears" class="link-test">
+                <NonsenseBtn :btnTxt="'Discover now'" />
+            </router-link>
+        </div>
     </div>
 </template>
 
@@ -20,36 +25,43 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
-    background-color: black;
-}
-
-img {
-    width: 100%;
-}
-
-.company-logos {
-    position: relative;
-    bottom: 650px;
-    width: 80%;
-
+.hero-container {
     display: block;
-    margin: auto;
-}
-
-.discover-btn {
     position: relative;
-    bottom: 200px;
 
     img {
-        width: 11.5vw;
-    }
+        width: 100%;
+        height: auto;
+        display: block;
+        user-select: none;
 
-    p {
-        position: relative;
-        bottom: 36px;
-        font-size: 25px;
-        text-align: center;
     }
+}
+
+.sec {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    inset: 0;
+    position: absolute;
+}
+
+.third {
+    justify-content: center;
+    display: flex;
+    flex: 1 1 0%;
+
+    img {
+        object-fit: contain;
+        width: 80%;
+        height: auto;
+        display: block;
+        user-select: none;
+
+    }
+}
+
+.link-test {
+    padding-block-end: 4rem;
 }
 </style>

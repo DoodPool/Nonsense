@@ -39,8 +39,6 @@ export default {
   
 <style scoped>
 ul {
-    background-color: white;
-
     display: grid;
     /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
     grid-template-columns: repeat(4, minmax(150px, 1fr));

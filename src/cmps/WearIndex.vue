@@ -96,10 +96,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
-    background-color: black;
-}
-
 article:not(.full) {
     padding-inline: 64px;
 

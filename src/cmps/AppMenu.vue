@@ -9,11 +9,11 @@
 
         <nav>
             <router-link to="/wears" @click="onToggleMenu()">
-                <span>Shop</span>
+                <p>Shop</p>
             </router-link>
             <p>Lookbook</p>
             <router-link to="/about" @click="onToggleMenu()">
-                <span>About</span>
+                <p>About</p>
             </router-link>
         </nav>
 
@@ -45,14 +45,15 @@ section {
     position: fixed;
     top: 0;
 
-    display: grid;
-    grid-template-rows: 5rem 1fr 5rem;
+    display: flex;
+    flex-direction: column;
 
     height: 100vh;
     width: 100vw;
     background-color: black;
 
     z-index: 10;
+    inset: 0;
 
     color: white;
     animation: fade-in .2s;
@@ -71,26 +72,30 @@ section {
     }
 
     nav {
-        align-self: center;
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+
         font-size: 3.75rem;
-        text-transform: uppercase;
         line-height: 1.125;
-        // animation: slide-in 2s;
+        text-transform: uppercase;
+
+        padding: 2rem;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+
+        animation: slide-in .5s;
     }
 
     .social-links-container {
         display: flex;
-        width: 16rem;
-        justify-content: center;
         margin: auto;
-
-        gap: 1.35rem;
+        padding: 2rem;
+        gap: 1.5rem;
 
         &>* {
             font-size: 1.25rem;
             line-height: 1.75rem;
-            color: white;
             transition: 0.2s;
 
             &:hover {
@@ -103,10 +108,6 @@ section {
 
 img {
     cursor: pointer;
-}
-
-.grid {
-    display: grid;
 }
 
 .none {

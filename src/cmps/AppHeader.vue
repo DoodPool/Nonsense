@@ -1,9 +1,13 @@
 <template>
     <header class="app-header" :class="{ 'fixed': !isAbout, 'sticky': isAbout }">
-        <button :class="{ 'home': isHome }" @click="onToggleMenu()">Menu</button>
-        <img src="https://nonsense.jp/_image?href=%2F_astro%2Flogo.0fcf7e5a.gif&f=webp" alt="">
-        <button :class="{ 'home': isHome }">Cart (0)</button>
+        <button @click="onToggleMenu()">Menu</button>
+        <button>Cart (0)</button>
     </header>
+    <div>
+        <div class="gif-container">
+            <img src="https://nonsense.jp/_image?href=%2F_astro%2Flogo.0fcf7e5a.gif&f=webp" alt="">
+        </div>
+    </div>
 </template>
 
 <script>
@@ -14,18 +18,15 @@ export default {
         }
     },
     watch: {
-    '$route'() {
-      this.checkIsAbout()
-    }
-  },
-  created() {
-    this.checkIsAbout()
-  },
+        '$route'() {
+            this.checkIsAbout()
+        }
+    },
+    created() {
+        this.checkIsAbout()
+    },
     props: {
         onToggleMenu: {
-            required: true,
-        },
-        isHome: {
             required: true,
         },
     },
@@ -50,17 +51,16 @@ export default {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    height: 4rem;
 
     padding-inline: 25px;
     background-color: inherit;
     z-index: 1;
 
-    img {
-        width: 70px;
-    }
+    mix-blend-mode: difference;
 
     button {
-        // color: white;
+        color: white;
         font-size: 36px;
         text-transform: uppercase;
 
@@ -75,8 +75,32 @@ export default {
         }
     }
 
-    .home {
-        color: white;
+}
+
+div {
+    position: fixed;
+    top: 0;
+    
+    width: 100%;
+    height: 4rem;
+    z-index: 1;
+    pointer-events: none;
+
+    .gif-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: auto;
+        height: 120%;
+
+        transform: translate(-50%, -50%);
+
+        img {
+            width: auto;
+            height: 100%;
+            user-select: none;
+        }
     }
 }
 </style>
