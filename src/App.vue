@@ -4,7 +4,7 @@
   <main>
     <RouterView />
   </main>
-  <AppFooter :isHome="isHome" />
+  <AppFooter :isHome="isHome" :isMobile="isMobile"/>
 </template>
 
 <script>
@@ -29,7 +29,9 @@ export default {
     }
   },
   mounted() {
+    this.checkIsHome()
     this.bodyBcToggle()
+    this.onResize()
     window.addEventListener("resize", this.onResize)
   },
   created() {

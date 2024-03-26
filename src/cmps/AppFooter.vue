@@ -1,6 +1,6 @@
 <template>
     <section>
-        <router-link  v-if="isHome" to="/wears" class="link-test">
+        <router-link v-if="isHome" to="/wears" class="link-test">
             <NonsenseBtn class="btn-center " :btnTxt="'Shop all'" />
         </router-link>
 
@@ -19,10 +19,11 @@
 
             <div class="newsletter">
                 <h1>Newsletter signup</h1>
-                <p>Stay in the loop about the latest nonsense drops and special events.</p>
+                <p v-if="!isMobile">Stay in the loop about the latest nonsense drops and special events.</p>
                 <form>
                     <input type="email" placeholder="Your e-mail">
-                    <button>Sign up</button>
+                    <button v-if="isMobile">subscribe</button>
+                    <button v-else>Sign up</button>
                 </form>
             </div>
 
@@ -49,6 +50,9 @@ export default {
         isHome: {
             required: true,
         },
+        isMobile: {
+            required: true,
+        },
     },
     components: {
         NonsenseBtn,
@@ -67,7 +71,20 @@ export default {
 .app-footer {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    row-gap: 4rem;
+
+    @media (max-width: 754px) {
+        grid-template-columns: auto;
+        padding: 0;
+
+        p {
+            padding-block-end: 1.2rem;
+            margin-block-start: 1.5rem;
+        }
+    }
+
+    @media (min-width: 755px) {
+        row-gap: 4rem;
+    }
 
     padding-inline: 4rem;
     padding-block: 2rem;
@@ -76,6 +93,11 @@ export default {
 
     &>* {
         text-transform: uppercase;
+
+        @media (max-width: 754px) {
+            text-align: center;
+            margin: auto;
+        }
     }
 
     .site-info {
@@ -86,6 +108,10 @@ export default {
             font-size: 30px;
             transition: 0.2s;
             cursor: pointer;
+
+            @media (max-width: 754px) {
+                margin-block-end: 0.5rem;
+            }
 
             &:hover {
                 color: lighten($color: black, $amount: 35);
@@ -99,6 +125,11 @@ export default {
     }
 
     .newsletter {
+        @media (max-width: 754px) {
+            grid-row: 1;
+            width: 100%;
+        }
+
         text-align: center;
         align-self: center;
         line-height: 1.75rem;
@@ -112,10 +143,31 @@ export default {
         p {
             font-size: 20px;
         }
+
+        @media (max-width: 754px) {
+            padding: 1rem;
+
+            h1 {
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+            }
+
+            form>* {
+                display: block;
+                width: 100%;
+                margin: 0;
+                margin-block-end: 0.5rem;
+            }
+
+            form button {
+                margin: 0;
+            }
+        }
     }
 
     form {
         padding-block: 1rem;
+
 
         input {
             background-color: rgb(252 238 10);
@@ -127,6 +179,10 @@ export default {
         }
 
         button {
+            @media (max-width: 754px) {
+                font-size: 1.5rem;
+            }
+
             background-color: black;
             color: white;
             border: none;
@@ -151,10 +207,22 @@ export default {
     img {
         margin-inline-start: auto;
         width: 16rem;
+
+        @media (max-width: 754px) {
+            width: 11rem;
+            margin-block: 1.5rem;
+        }
+
     }
 
     .social-links-container {
-        grid-column: 3;
+        @media (max-width: 754px) {
+            grid-row: 4;
+        }
+
+        @media (min-width: 755px) {
+            grid-column: 3;
+        }
 
         display: flex;
         width: 16rem;

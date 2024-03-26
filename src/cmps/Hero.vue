@@ -1,10 +1,12 @@
 <template>
     <div class="hero-container">
-        <!-- <img src="https://nonsense.jp/_image?href=%2F_astro%2Fhero2.ea8d3e64.webp&f=webp" alt=""> -->
-        <img src="https://nonsense.jp/_image?href=%2F_astro%2Fhero_mobile.e76a7bd3.webp&f=webp" alt="">
+
+        <img v-if="isMobile" src="https://nonsense.jp/_image?href=%2F_astro%2Fhero_mobile.e76a7bd3.webp&f=webp" alt="">
+        <img v-else src="https://nonsense.jp/_image?href=%2F_astro%2Fhero2.ea8d3e64.webp&f=webp" alt="">
+        
         <div class="sec">
             <div class="third">
-                <img class="company-logos" src="https://nonsense.jp/_image?href=%2F_astro%2Flogos.9ea43969.webp&f=webp"
+                <img v-if="!isMobile" class="company-logos" src="https://nonsense.jp/_image?href=%2F_astro%2Flogos.9ea43969.webp&f=webp"
                     alt="">
             </div>
             <router-link to="/wears" class="link-test">
@@ -18,9 +20,14 @@
 import NonsenseBtn from './NonsenseBtn.vue'
 
 export default {
+    props: {
+        isMobile: {
+            required: true,
+        },
+    },
     components: {
         NonsenseBtn,
-    }
+    },
 }
 </script>
 
