@@ -121,7 +121,7 @@ export default {
 section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding-block-start: 5rem;
+    padding: 2rem;
 
     .wear-info {
 

@@ -262,11 +262,12 @@ export default {
 
     form {
         button {
-            background-color: white;
-            color: black;
+            background-color: #ff3a3a;
+            color: white;
 
             &:hover {
-                color: white;
+                background-color: white;
+                color: #ff3a3a;
             }
         }
 

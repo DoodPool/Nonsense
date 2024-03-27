@@ -1,5 +1,5 @@
 <template>
-    <header class="app-header" :class="{ 'fixed': !isAbout, 'sticky': isAbout }">
+    <header class="app-header" :class="{ 'fixed': isHome, 'sticky': !isHome }">
         <button @click="onToggleMenu()">Menu</button>
         <button>Cart (0)</button>
     </header>
@@ -14,16 +14,16 @@
 export default {
     data() {
         return {
-            isAbout: false
+            isHome: null
         }
     },
     watch: {
         '$route'() {
-            this.checkIsAbout()
+            this.checkIsHome()
         }
     },
     created() {
-        this.checkIsAbout()
+        this.checkIsHome()
     },
     props: {
         onToggleMenu: {
@@ -31,12 +31,12 @@ export default {
         },
     },
     methods: {
-        checkIsAbout() {
+        checkIsHome() {
             const currUrl = window.location.href
-            if (currUrl === "http://localhost:5173/#/about") {
-                this.isAbout = true
+            if (currUrl === "http://localhost:5173/#/") {
+                this.isHome = true
             } else {
-                this.isAbout = false
+                this.isHome = false
             }
         },
     },

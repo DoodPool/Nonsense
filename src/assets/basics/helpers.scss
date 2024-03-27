@@ -45,6 +45,10 @@
   &.space-between {
     justify-content: space-between;
   }
+
+  &.align-start {
+    align-items: flex-start;
+  }
 }
 
 // Media helpers
@@ -81,6 +85,10 @@
 
 .tx-upper {
   text-transform: uppercase;
+}
+
+.tx-center {
+  text-align: center;
 }
 
 .h-full {

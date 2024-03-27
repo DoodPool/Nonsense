@@ -5,7 +5,8 @@
         <article>
             <img src="https://nonsense.jp/_image?href=%2F_astro%2Fcoporate_jacket_mobile.72a8af75.webp&f=webp" alt="">
             <div class="display-area left-4">
-                <div class="btn-pos-left flex h-full">
+                <div class="column space-between align-start flex h-full">
+                    <span class="tx-upper">now available</span>
                     <div class="btn-container flex">
                         <h1>
                             <p>corporate</p>
@@ -25,9 +26,9 @@
             <img src="https://nonsense.jp/_image?href=%2F_astro%2Fsandevistan_hoodie_mobile.d3c44e13.webp&f=webp"
                 alt="">
             <div class="display-area right-8">
-                <div class="btn-pos-right flex h-full">
+                <div class="btn-pos-center flex h-full">
                     <div class="btn-container flex">
-                        <h1>
+                        <h1 class="tx-center">
                             <p>sandevistan</p>
                             <p>hoodie</p>
                         </h1>
@@ -43,11 +44,11 @@
 
         <article>
             <img src="https://nonsense.jp/_image?href=%2F_astro%2Fmc_night_jacket.05b8a965.webp&f=webp" alt="">
-            <div class="display-area left-8">
-                <div class="btn-pos-left flex h-full">
-                    <p>now available</p>
+            <div class="display-area">
+                <div class="column space-between align-start flex h-full">
+                    <span class="tx-upper">now available</span>
                     <div class="btn-container flex">
-                        <h1>
+                        <h1 class="w-fu">
                             <p>mc night</p>
                             <p>jacket</p>
                         </h1>
@@ -122,17 +123,30 @@ article {
         padding-top: 0;
         animation: fade-in .5s;
 
-        top: 4rem;
+        top: 0.5rem;
         bottom: 4rem;
+        left: 3rem;
+        right: 1rem;
+
+        span {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            align-self: flex-end;
+        }
     }
 
-    .btn-pos-right {
-        justify-content: flex-end;
-        align-items: flex-end;
+    & > div {
+        padding: 1rem;
     }
 
-    .btn-pos-left {
-        justify-content: flex-start;
+    span {
+        color: rgb(252, 238, 10);
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .btn-pos-center {
+        justify-content: center;
         align-items: flex-end;
     }
 
@@ -151,6 +165,7 @@ img {
 h1 {
     color: white;
 
+    width: 100%;
     line-height: .8em;
     font-size: 2.25rem;
     font-weight: 400;
